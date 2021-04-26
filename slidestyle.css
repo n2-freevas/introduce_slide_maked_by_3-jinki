@@ -10,12 +10,11 @@ html{
 }
 body{
     background: red;
-    position: relative;
     width:100vw;
 }
 
 #opening{
-    position: absolute;
+    position: relative;
     right:0;
     width:100vw;
     height:100vh;
@@ -26,15 +25,25 @@ body{
 #opening.finish{
     width:0;
 }
-#scroller{
+#opening-logo{
+    z-index:102;
     position: absolute;
-
-    width:100vw;
-    height:50px;
+    right:20px;
+    bottom: 20px;
 }
+#opening-io{
+    z-index:101;
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+
+
+
+
 #main-slide{
+    position: relative;
     width:100vw;
-    height:100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
@@ -44,27 +53,16 @@ body{
 
 .slide{
     background: white;
-    z-index:1;
-    perspective: 1px;
-    top:0;left:0;
-    margin:5px;
-    width:90vw;
-    height:100vh;
-    scroll-snap-align: start;
-    overflow-y:scroll;
-    overscroll-behavior: contain;
     position: relative;
+    z-index:1;
+    width:90vw;
+    height:200vh;
+    scroll-snap-align: start;
+    overflow-y: scroll;
+    
 }
 .slide:nth-of-type(2n){
     background: black;
-}
-
-.slide p{
-    position: absolute;
-    background: mediumaquamarine;
-    z-index:50;
-    bottom:-200vh;
-    right:5px;
 }
 
 .text_area{
