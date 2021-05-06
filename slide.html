@@ -3,133 +3,41 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/global.js"></script>
     <link rel="icon" href="img/n2-favicon-black.ico" />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="slidestyle.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slidestyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
 </head>
 <body>
     <!-- Loading Animation on Opening-->
     <div id ="opening">
-        <div id = 'opening_logo'><img src='img/n2-icon-white.svg'></img></div>
-        <div id = 'opening-io'></div>
+        <div id = 'opening-logo'><img src='img/n2-icon-white.svg'></img></div>
+        <div id ='opening-circle'></div>
+        <div id ='opening-circle2'></div>
+        <div id = 'opening-io'><div id="caret"></div></div>
     </div>
     <script defer src="js/opening-mainScript.js"></script>
+    <script defer src="js/opening-ioScript.js"></script>
 
-
+    <section id='info-bar'>
+        <div id='slide_no'>1/12</div>
+        <div id='slide_title'>Introduce Myself</div>
+    </section>
     <section id="main-slide">
         
-        <!--  Slide1  -->
-        <div class="text_area dep1 border">
-            Text1
-        </div>
-        <div class="text_area dep2 border">
-            Text2
-        </div>
-        <div class="text_area dep3 border">
-            Text3
-        </div>
-        <div class="text_area dep4 border">
-            Text4
-        </div>
-        <div class="text_area dep5 border">
-            
-            Text5
-        </div>
-        <div class="text_area dep6 border">
-            Text6
-        </div>
-        <div class="text_area dep7 border">
-            Text7
-        </div>
-        <div class="text_area dep8 border">
-            Text8
-        </div>
-        <div class="text_area dep9 border">
-            Text9
-        </div>
-        <div class="text_area dep10 border">
-            Text10
-        </div>
+        <div class='slide'></div>
+        <div class='slide'></div>
+        <div class='slide'></div>
+        <div class='slide'></div>
+        <div class='slide'></div>
+        <div class='slide'></div>
+        <div class='slide'></div>
+        
 
-        <!--  Slide2  -->
-        <section class='slide'>
-            
-            <div class="text_area dep1 border">
-                Text1
-            </div>
-            <div class="text_area dep2 border">
-                Text2
-            </div>
-            <div class="text_area dep3 border">
-                Text3
-            </div>
-            <div class="text_area dep4 border">
-                Text4
-            </div>
-            <div class="text_area dep5 border">
-                
-                Text5
-            </div>
-            <div class="text_area dep6 border">
-                Text6
-            </div>
-            <div class="text_area dep7 border">
-                Text7
-            </div>
-            <div class="text_area dep8 border">
-                Text8
-            </div>
-            <div class="text_area dep9 border">
-                Text9
-            </div>
-            <div class="text_area dep10 border">
-                Text10
-            </div>
-            
-            
-        </section>
-
-        <!--  Slide3  -->
-        <section class='slide'>
-            
-            <div class="text_area">
-                Text3
-            </div>
-            
-        </section>
-
-        <!--  Slide4  -->
-        <section class='slide'>
-            
-            <div class="text_area">
-                Text4
-            </div>
-        </section>
-
-        <!--  Slide5  -->
-        <section class='slide'>
-            
-            <div class="text_area">
-                Text5
-            </div>
-        </section>
-
-        <!--  Slide6  -->
-        <section class='slide'>
-            
-            <div class="text_area">
-                Text6
-            </div>
-        </section>
-
-        <!--  Slide7  -->
-        <section class='slide'>
-            
-            <div class="text_area">
-                Text7
-            </div>
-        </section>
+    
     </section>
 </body>
 </html>
