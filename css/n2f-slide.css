@@ -1,5 +1,6 @@
 @media screen and (min-width: 300px) {
   :root {
+    --main-red:#ff0000;
     --font-size-large:16px;
     --font-size-small:10px;
     --panel-padding:20px 15px 20px 30px;
@@ -8,6 +9,7 @@
 
 @media screen and (min-width: 700px) {
   :root {
+    --main-red:#b40000;
     --font-size-large:22px;
     --font-size-small:14px;
     --panel-padding:40px 30px 40px 50px;
@@ -61,6 +63,7 @@
   scrollbar-width: none;
   overflow-x: hidden;
   overflow-y: scroll;
+  overscroll-behavior: none;
   -ms-scroll-snap-type: y proximity;
       scroll-snap-type: y proximity;
   -webkit-perspective: 200px;
@@ -72,7 +75,7 @@
 }
 
 .slide-frame {
-  background: #b40000;
+  background: var(--main-red);
   z-index: 1;
   width: 100vw;
   min-height: 100vh;
@@ -93,7 +96,7 @@
   position: relative;
   margin: 20px 20px 100px 20px;
   padding: var(--panel-padding);
-  color: #b40000;
+  color: var(--main-red);
   background: white;
   z-index: 10;
 }
@@ -125,7 +128,7 @@
 }
 
 .slide-frame .slide .panel a {
-  color: #b40000;
+  color: var(--main-red);
   text-decoration: none;
 }
 

@@ -479,6 +479,7 @@ body {
 
 @media screen and (min-width: 300px) {
   :root {
+    --main-red:#ff0000;
     --font-size-large:16px;
     --font-size-small:10px;
     --panel-padding:20px 15px 20px 30px;
@@ -487,6 +488,7 @@ body {
 
 @media screen and (min-width: 700px) {
   :root {
+    --main-red:#b40000;
     --font-size-large:22px;
     --font-size-small:14px;
     --panel-padding:40px 30px 40px 50px;
@@ -508,8 +510,8 @@ body {
 #info-bar #slide-no {
   -webkit-transform-origin: calc(100% + 105px) 20px;
           transform-origin: calc(100% + 105px) 20px;
-  -webkit-transform: rotate(120deg);
-          transform: rotate(120deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   -webkit-transition: 1s 0.3s;
   transition: 1s 0.3s;
 }
@@ -522,8 +524,8 @@ body {
 #info-bar #slide-title {
   -webkit-transform-origin: calc(100% + 105px) 20px;
           transform-origin: calc(100% + 105px) 20px;
-  -webkit-transform: rotate(120deg);
-          transform: rotate(120deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   -webkit-transition: 1s;
   transition: 1s;
 }
@@ -540,6 +542,7 @@ body {
   scrollbar-width: none;
   overflow-x: hidden;
   overflow-y: scroll;
+  overscroll-behavior: none;
   -ms-scroll-snap-type: y proximity;
       scroll-snap-type: y proximity;
   -webkit-perspective: 200px;
@@ -551,7 +554,7 @@ body {
 }
 
 .slide-frame {
-  background: #b40000;
+  background: var(--main-red);
   z-index: 1;
   width: 100vw;
   min-height: 100vh;
@@ -572,7 +575,7 @@ body {
   position: relative;
   margin: 20px 20px 100px 20px;
   padding: var(--panel-padding);
-  color: #b40000;
+  color: var(--main-red);
   background: white;
   z-index: 10;
 }
@@ -604,7 +607,7 @@ body {
 }
 
 .slide-frame .slide .panel a {
-  color: #b40000;
+  color: var(--main-red);
   text-decoration: none;
 }
 
