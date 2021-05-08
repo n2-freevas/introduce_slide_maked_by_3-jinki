@@ -5,8 +5,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/global.js"></script>
     <link rel="icon" href="img/n2-favicon-black.ico" />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/slidestyle.css">
+    <link rel="stylesheet" href="css/n2f-opening-likeconsole.css">
+    <link rel="stylesheet" href="css/n2f-slide.css">
+    <!--<link rel="stylesheet" href="css/slidestyle.css">-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
@@ -19,25 +22,50 @@
         <div id ='opening-circle2'></div>
         <div id = 'opening-io'><div id="caret"></div></div>
     </div>
-    <script defer src="js/opening-mainScript.js"></script>
-    <script defer src="js/opening-ioScript.js"></script>
+    <script defer src="js/opening-Script.js"></script>
+    <script defer src="js/promise-chain.js"></script>
 
     <section id='info-bar'>
-        <div id='slide_no'>1/12</div>
-        <div id='slide_title'>Introduce Myself</div>
+        <div id='slide-no'>1/12</div>
+        <div id='slide-title'>Introduce Myself</div>
     </section>
-    <section id="main-slide">
+    <div id="main-slide">
         
-        <div class='slide'></div>
-        <div class='slide'></div>
-        <div class='slide'></div>
-        <div class='slide'></div>
-        <div class='slide'></div>
-        <div class='slide'></div>
-        <div class='slide'></div>
-        
+        <section class='slide-frame'>
+            <div class='slide'>
+                <div class='panel'>
+                    <p>hello again to all my friend!<a class='small' href='https://www.youtube.com/watch?v=eOofWzI3flA'target="_blank" rel="noopener noreferrer">(元ネタ)</a></p>
+                    <p>このスライドは、scssを学習する主目的のついでにスライド制作をするという、
+                    製作者の都合丸出しの成果物である。</p>
+                </div>
+                <div class='panel'>
+                    <p><a href='https://github.com/n2-freevas/introduce_slide_maked_by_3-jinki'target="_blank" rel="noopener noreferrer">github<i class="fab fa-github-square"></i></a>に、このスライドで使われたすべてのマテリアルを格納した。</p>
+                    <p>興味があれば、閲覧されたし。</p>
+                </div>
+                <div class='back-panel' style='top:45%;left:-20%;'>
+                    <i class="fab fa-github fa-n2f-opt"></i>
+                </div>
+                <div class='panel'>
+                    <p>また、本コンテンツは開発時間の関係上、以下の環境を推奨する。</p>
+                    <table>
+                        <tr><td>ブラウザ</td><td>Chrome,Safari</td></tr>
+                        <tr><td>OS</td><td>iOS,MacOS,Windows10</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class='slide-frame'></section>
+        <section class='slide-frame'></section>
+        <section class='slide-frame'></section>
+        <section class='slide-frame'></section>
+        <section class='slide-frame'></section>
+        <section class='slide-frame'></section>
+        <section class='slide-frame'></section>
+
+
 
     
-    </section>
+    </div>
+    
 </body>
 </html>

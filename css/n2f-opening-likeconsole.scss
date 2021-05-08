@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+:root{
+    --main-color:#a80000;
+    --preset-scale:1
+}
+
+html{
+    font-size: 20px;
+}
+body{
+    background: red;
+    width:100vw;
+}
+
+#opening{
+    color:white;
+    position: fixed;
+    top:0;
+    right:0;
+    width:100vw;
+    height:100vh;
+    z-index: 100;
+    background: black;
+    padding:20px;
+    transition: 1s 1s;
+    &.finish{
+        width:0;
+        padding: 0;
+    }
+}
+
+#opening-logo{
+    z-index:102;
+    position: fixed;
+    right:50px;
+    bottom:50px;
+    width:50px;
+    animation: skew2 2s infinite;
+    transition: 1s;
+    &.up{
+        bottom: calc(100vh - 100px);
+    }
+}
+#opening-circle,#opening-circle2{
+    z-index:102;
+    position: fixed;
+    border: solid 2px white;
+   
+}
+#opening-circle{
+    --circle_r:180px;
+    right:-15px;
+    bottom:-15px;
+    width:var(--circle_r);
+    height:var(--circle_r);
+    border-radius:calc(var(--circle_r) / 2);
+    animation: threed-round infinite 10s;
+    transition: 1s 0.1s;
+    &.up{
+        bottom: calc(100vh - 165px);
+    }
+}
+#opening-circle2{
+    --circle2_r:130px;
+    transform: rotateX(75deg);
+    right:10px;
+    bottom:10px;
+    width:var(--circle2_r);
+    height:var(--circle2_r);
+    border-radius:calc(var(--circle2_r) / 2);
+    animation: threed-round2 linear infinite 12s;
+    transition: 1s 0.2s;
+    &.up{
+        bottom: calc(100vh - 140px);
+    }
+}
+@keyframes threed-round{
+    0%{transform: rotate3d(1,1,1,0deg);}
+    25%{transform: rotate3d(1,1,1,90deg);}
+    50%{transform: rotate3d(1,1,1,180deg);}
+    75%{transform: rotate3d(1,1,1,270deg);}
+    100%{transform: rotate3d(1,1,1,360deg);}
+}
+@keyframes threed-round2{
+    0%{transform: rotate3d(1,0,1,-15deg);}
+    25%{transform: rotate3d(1,1,0,75deg);}
+    50%{transform: rotate3d(0,1,1,165deg);}
+    75%{transform: rotate3d(1,0,1,255deg);}
+    100%{transform: rotate3d(1,1,0,345deg);}
+}
+#opening-io{
+    z-index:101;
+    position: fixed;
+    top:20px;
+    left:20px;
+    transition: 1s;
+
+    &.fadeout{
+        opacity: 0;
+    }
+    &.none{
+        display: none;
+    }
+}
+
+.io_text{
+    display: inline-block;
+    font-size: 11px;
+    margin: 5px 0;
+    &.skew{
+        animation: skew 2s infinite;
+    }
+}
+
+
+@keyframes skew {
+    0% {transform: none;}
+    33% {transform: none;}
+    33.3% {transform: skewX(60deg);}
+    33.6% {transform: skewX(-60deg);}
+    33.9% {transform: none;}
+    66% {transform: none;}
+    66.3% {transform: skewX(20deg);}
+    66.6% {transform: skewX(-20deg);}
+    66.9% {transform: none;}
+    77% {transform: none;}
+    77.3% {transform: skewX(60deg);}
+    77.6% {transform: skewX(-60deg);}
+    77.9% {transform: none;}
+}
+@keyframes skew2 {
+    0% {transform: none;}
+    33% {transform: none;}
+    33.3% {transform: skewX(15deg);}
+    33.6% {transform: skewX(-15deg);}
+    33.9% {transform: none;}
+    66% {transform: none;}
+    66.3% {transform: skewX(20deg);}
+    66.6% {transform: skewX(-20deg);}
+    66.9% {transform: none;}
+    77% {transform: none;}
+    77.3% {transform: skewX(10deg);}
+    77.6% {transform: skewX(-10deg);}
+    77.9% {transform: none;}
+}
+
+#caret{
+    background: white;
+    display:inline-block;
+    width:8px;
+    height:10px;
+    margin-left: 5px;
+    animation: pikopiko infinite 1.2s;
+    opacity: 1;
+}
+@keyframes pikopiko {
+    0%{opacity: 1;}
+    45%{opacity: 1;}
+    50%{opacity: 0;}
+    95%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+

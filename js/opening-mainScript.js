@@ -1,5 +1,0 @@
-
-var ready = false;
-
-
-

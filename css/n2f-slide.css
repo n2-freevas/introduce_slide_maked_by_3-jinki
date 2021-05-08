@@ -1,0 +1,161 @@
+@media screen and (min-width: 300px) {
+  :root {
+    --font-size-large:16px;
+    --font-size-small:10px;
+    --panel-padding:20px 15px 20px 30px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  :root {
+    --font-size-large:22px;
+    --font-size-small:14px;
+    --panel-padding:40px 30px 40px 50px;
+  }
+}
+
+#info-bar {
+  z-index: 102;
+  position: fixed;
+  bottom: unset;
+  top: 45px;
+  right: 180px;
+  text-align: right;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+  color: white;
+}
+
+#info-bar #slide-no {
+  -webkit-transform-origin: calc(100% + 105px) 20px;
+          transform-origin: calc(100% + 105px) 20px;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+  -webkit-transition: 1s 0.3s;
+  transition: 1s 0.3s;
+}
+
+#info-bar #slide-no.roll {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+#info-bar #slide-title {
+  -webkit-transform-origin: calc(100% + 105px) 20px;
+          transform-origin: calc(100% + 105px) 20px;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#info-bar #slide-title.roll {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+#main-slide {
+  width: 100vw;
+  height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  -webkit-perspective: 200px;
+          perspective: 200px;
+}
+
+#main-slide::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-frame {
+  background: #b40000;
+  z-index: 1;
+  width: 100vw;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slide-frame .slide {
+  position: relative;
+  width: inherit;
+  max-width: 700px;
+  margin: 0 auto;
+  z-index: 0;
+  padding: 180px 20px 20px 20px;
+}
+
+.slide-frame .slide .panel {
+  position: relative;
+  margin: 20px 20px 100px 20px;
+  padding: var(--panel-padding);
+  color: #b40000;
+  background: white;
+  z-index: 10;
+}
+
+.slide-frame .slide .panel::before {
+  position: absolute;
+  border-top: solid 1px white;
+  border-left: solid 1px white;
+  content: '';
+  top: -15px;
+  left: -15px;
+  width: 50px;
+  height: calc(100% + 15px);
+}
+
+.slide-frame .slide .panel::after {
+  position: absolute;
+  border-right: solid 1px white;
+  border-bottom: solid 1px white;
+  content: '';
+  bottom: -15px;
+  right: -15px;
+  width: 50px;
+  height: calc(100% + 15px);
+}
+
+.slide-frame .slide .panel p {
+  font-size: var(--font-size-large);
+}
+
+.slide-frame .slide .panel a {
+  color: #b40000;
+  text-decoration: none;
+}
+
+.slide-frame .slide .panel a.small {
+  font-size: var(--font-size-small);
+  vertical-align: top;
+  margin: 2px;
+}
+
+.slide-frame .slide .panel a i {
+  margin: 0px 3px;
+}
+
+.slide-frame .slide .panel table {
+  font-size: var(--font-size-large);
+}
+
+.slide-frame .slide .back-panel {
+  position: absolute;
+  z-index: 5;
+  -webkit-transform: translateZ(-100px) scale(2);
+          transform: translateZ(-100px) scale(2);
+}
+
+.slide-frame .slide .back-panel .fa-n2f-opt {
+  font-size: 200px;
+  color: white;
+}
+
+.slide-frame:nth-of-type(2n) {
+  background: blue;
+}
+/*# sourceMappingURL=n2f-slide.css.map */
