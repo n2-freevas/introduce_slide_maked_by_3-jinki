@@ -150,7 +150,7 @@ async function opening_is_runnnig(){
         [
             ["Hello again, to all my friend.",100,'output'],
             ["Together we can play some codi'n'on!",100,'output'],
-            /*
+            
             [" -",100,'output'],
             ["codi install n2f -force -p this/br/package",1500,"input"],
             
@@ -166,7 +166,7 @@ async function opening_is_runnnig(){
             ["  process: ",500,'gauge'],
             ["     Successfully installed n2f viewer",100,'output'],
             ["n2freevas introduce using web browser Launch!",1000,'output'],
-            */
+            
         ]
     )
 }
