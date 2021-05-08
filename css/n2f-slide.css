@@ -29,8 +29,8 @@
 #info-bar #slide-no {
   -webkit-transform-origin: calc(100% + 105px) 20px;
           transform-origin: calc(100% + 105px) 20px;
-  -webkit-transform: rotate(120deg);
-          transform: rotate(120deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   -webkit-transition: 1s 0.3s;
   transition: 1s 0.3s;
 }
@@ -43,8 +43,8 @@
 #info-bar #slide-title {
   -webkit-transform-origin: calc(100% + 105px) 20px;
           transform-origin: calc(100% + 105px) 20px;
-  -webkit-transform: rotate(120deg);
-          transform: rotate(120deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   -webkit-transition: 1s;
   transition: 1s;
 }

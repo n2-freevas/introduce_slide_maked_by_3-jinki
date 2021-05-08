@@ -34,12 +34,12 @@ body{
     z-index:102;
     position: fixed;
     right:50px;
-    bottom:50px;
+    top:calc(100vh - 100px);
     width:50px;
     animation: skew2 2s infinite;
     transition: 1s;
     &.up{
-        bottom: calc(100vh - 100px);
+        top: 50px;
     }
 }
 #opening-circle,#opening-circle2{
@@ -51,28 +51,30 @@ body{
 #opening-circle{
     --circle_r:180px;
     right:-15px;
-    bottom:-15px;
+    top: calc(100vh - 165px);
     width:var(--circle_r);
     height:var(--circle_r);
     border-radius:calc(var(--circle_r) / 2);
     animation: threed-round infinite 10s;
     transition: 1s 0.1s;
     &.up{
-        bottom: calc(100vh - 165px);
+        top:-15px;
+        
     }
 }
 #opening-circle2{
     --circle2_r:130px;
     transform: rotateX(75deg);
     right:10px;
-    bottom:10px;
+    top: calc(100vh - 140px);
     width:var(--circle2_r);
     height:var(--circle2_r);
     border-radius:calc(var(--circle2_r) / 2);
     animation: threed-round2 linear infinite 12s;
     transition: 1s 0.2s;
     &.up{
-        bottom: calc(100vh - 140px);
+        top:10px;
+        
     }
 }
 @keyframes threed-round{

@@ -37,7 +37,7 @@ $breakpoints: (
 
     #slide-no{
         transform-origin: calc(100% + 105px) 20px;
-        transform: rotate(120deg);
+        transform: rotate(90deg);
         transition: 1s 0.3s;
         &.roll{
             transform: rotate(0deg);
@@ -45,7 +45,7 @@ $breakpoints: (
     }
     #slide-title{
         transform-origin: calc(100% + 105px) 20px;
-        transform: rotate(120deg);
+        transform: rotate(90deg);
         transition: 1s;
         &.roll{
             transform: rotate(0deg);
