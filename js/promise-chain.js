@@ -1,4 +1,10 @@
-opening_is_runnnig()
-.then(opening_is_end)
-.then(DOM_on_Loaded)
-.then(Main_Element_Get)
+async function sequence(){
+    console.log('sequence launch')
+    await opening_is_runnnig()
+    await waitDOMLoaded()
+    await Main_Element_Get()
+    await All_initialization()
+    await opening_is_end()
+}
+
+sequence()

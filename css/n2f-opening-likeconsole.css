@@ -32,7 +32,7 @@ body {
   padding: 0;
 }
 
-#opening-logo {
+#n2-logo {
   z-index: 102;
   position: fixed;
   right: 50px;
@@ -44,34 +44,37 @@ body {
   transition: 1s;
 }
 
-#opening-logo.up {
+#n2-logo.up {
   top: 50px;
 }
 
-#opening-circle, #opening-circle2 {
+#n2-circle, #n2-circle2 {
   z-index: 102;
   position: fixed;
   border: solid 2px white;
 }
 
-#opening-circle {
+#n2-circle {
   --circle_r:180px;
   right: -15px;
   top: calc(100vh - 165px);
   width: var(--circle_r);
   height: var(--circle_r);
   border-radius: calc(var(--circle_r) / 2);
-  -webkit-animation: threed-round infinite 10s;
-          animation: threed-round infinite 10s;
   -webkit-transition: 1s 0.1s;
   transition: 1s 0.1s;
 }
 
-#opening-circle.up {
+#n2-circle.roll {
+  -webkit-animation: threed-round infinite 10s;
+          animation: threed-round infinite 10s;
+}
+
+#n2-circle.up {
   top: -15px;
 }
 
-#opening-circle2 {
+#n2-circle2 {
   --circle2_r:130px;
   -webkit-transform: rotateX(75deg);
           transform: rotateX(75deg);
@@ -80,13 +83,16 @@ body {
   width: var(--circle2_r);
   height: var(--circle2_r);
   border-radius: calc(var(--circle2_r) / 2);
-  -webkit-animation: threed-round2 linear infinite 12s;
-          animation: threed-round2 linear infinite 12s;
   -webkit-transition: 1s 0.2s;
   transition: 1s 0.2s;
 }
 
-#opening-circle2.up {
+#n2-circle2.roll {
+  -webkit-animation: threed-round2 linear infinite 12s;
+          animation: threed-round2 linear infinite 12s;
+}
+
+#n2-circle2.up {
   top: 10px;
 }
 
@@ -183,12 +189,14 @@ body {
 }
 
 #opening-io {
-  z-index: 101;
+  z-index: 105;
   position: fixed;
   top: 20px;
   left: 20px;
   -webkit-transition: 1s;
   transition: 1s;
+  height: 80vh;
+  overflow-y: scroll;
 }
 
 #opening-io.fadeout {

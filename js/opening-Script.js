@@ -1,8 +1,8 @@
 const op = document.getElementById("opening")
-const op_logo = document.getElementById("opening-logo")
+const n2_logo = document.getElementById("n2-logo")
 const op_io = document.getElementById("opening-io")
-const op_cir = document.getElementById("opening-circle")
-const op_cir2 = document.getElementById("opening-circle2")
+const n2_cir = document.getElementById("n2-circle")
+const n2_cir2 = document.getElementById("n2-circle2")
 const path_image = "n2-freevas$  "
 const time_of_a_word_input = 50
 const time_of_a_gauge_process = 10
@@ -15,7 +15,7 @@ var no = 1
 function make_ioTextElement(){
     const ioText = document.createElement('div')
     ioText.setAttribute("class","io_text")
-    ioText.classList.add("skew")
+    if(!isPhone){ioText.classList.add("skew")}
     ioText.style.setProperty('animation-delay',Math.floor(Math.random() * 5)+'s')
     return ioText
 }
@@ -83,9 +83,7 @@ function io_likeInstall(wait,text,target){
 }
 
 async function ioInputStream(io_list){
-    
     const io_list_len = io_list.length;
-    var prewait = 0
     var wait = 0
     var io_text_array = []
     for(var i=0;i<io_list_len;i++){
@@ -123,56 +121,87 @@ function io_view_close(){
 }
 function opening_disp_none(){
     op_io.classList.add('none');
+    if(isPhone){
+        n2_cir.classList.add('roll')
+        n2_cir2.classList.add('roll')
+    }
 }
 function icon_up(){
-    op_logo.classList.add('up');
-    op_cir.classList.add('up');
-    op_cir2.classList.add('up');
-}
-
-
-
-// 引数で受け取った単純関数(引数のない関数)を、管理されたタイミングで順番に動作させるストリーム関数。
-async function TimingFunctionStream(funcs_list){
-    funcs_list_len = funcs_list.length
-    var time = 0
-    for(var i=0;i<funcs_list_len;i++){
-        time += funcs_list[i][1]
-        setTimeout(funcs_list[i][0],time)
-    }
+    n2_logo.classList.add('up');
+    n2_cir.classList.add('up');
+    n2_cir2.classList.add('up');
 }
 
 
 async function opening_is_runnnig(){
     
-    console.log('OPENING_IS_RUNNING')
-    resolver = await ioInputStream(
-        [
-            ["Hello again, to all my friend.",100,'output'],
-            ["Together we can play some codi'n'on!",100,'output'],
-            
-            [" -",100,'output'],
-            ["codi install n2f -force -p this/br/package",1500,"input"],
-            
-            ["Collecting n2freevas-introduce",100,'output'],
-            ["Downloading n2f-1.0.pkg",100,'output'],
-            ["  d|",200,'gauge'],
-            ["Downloading n2f-1.0.js&scss",500,'output'],
-            ["  d|",500,'gauge'],
-            ["     Successfully downloaded n2frevas-introduce",500,'output'],
-            [" -",100,'output'],
-            ["n2f launch view -browser --"+browser+" -all",1000,"input"],
-            ["Install contents...",100,'output'],
-            ["  process: ",500,'gauge'],
-            ["     Successfully installed n2f viewer",100,'output'],
-            ["n2freevas introduce using web browser Launch!",1000,'output'],
-            
-        ]
-    )
+    console.log('OPENING_IS_RUNNING');
+    if(isPhone){
+        console.log('pass')
+        /*
+        resolver = await ioInputStream(
+            [
+                ["Hello again, to all my friend.",100,'output'],
+                ["Together we can play some codi'n'on!",100,'output'], 
+                [" -",100,'output'],
+                ["All resource install...",100,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥slide.html',500,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥reset.css',900,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥slidestyle.css',900,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥global.js',500,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥opening-Script.js',500,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥promise-chain.js',700,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥n2-icon-white.svg',600,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥n2-favicon-black.ico',600,'output'],
+                [" -",100,'output'],
+                ["<useragent info>",100,'output'],
+                [useragent,100,'output'],
+                [" -",100,'output'],
+                ["Successfully installed n2f viewer",100,'output'],
+                ["n2freevas introduce using web browser Launch!",1000,'output']
+            ]
+        )
+        */
+    }
+    else{
+        n2_cir.classList.add('roll')
+        n2_cir2.classList.add('roll')
+        resolver = await ioInputStream(
+            [
+                ["Hello again, to all my friend.",100,'output'],
+                ["Together we can play some codi'n'on!",1000,'output'],
+                /*   
+                [" -",100,'output'],
+                ["codi install n2f -force -p this/br/package",1500,"input"],
+                
+                ["Collecting n2freevas-introduce",100,'output'],
+                ["Downloading n2f-1.0.pkg",100,'output'],
+                ["  d|",200,'gauge'],
+                ["Downloading n2f-1.0.js&scss",500,'output'],
+                ["  d|",500,'gauge'],
+                ["     Successfully downloaded n2frevas-introduce",500,'output'],
+                [" -",100,'output'],
+                ["n2f launch view -browser --"+browser+" -all",1000,"input"],
+                ["Install contents...",100,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥slide.html',500,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥reset.css',900,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥slidestyle.css',900,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥global.js',500,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥opening-Script.js',500,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥promise-chain.js',700,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥n2-icon-white.svg',600,'output'],
+                ['C:¥Users¥n2-freevas¥Virtual¥Browser¥This¥n2-favicon-black.ico',600,'output'],
+                ["     Successfully installed n2f viewer",100,'output'],
+                ["n2freevas introduce using web browser Launch!",1000,'output'],
+                */
+            ]
+        )
+    }
+    
+    return Promise.resolve('[opening_is_running] end')
 }
 
 async function opening_is_end(){
-    
     console.log('OPENING_IS_ENDED')
     resolver = await TimingFunctionStream(
         [
@@ -182,4 +211,5 @@ async function opening_is_end(){
             [infobar_roll,100]
         ]
     )
+    return Promise.resolve('[opening_is_end] end')
 }

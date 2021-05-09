@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/global.js"></script>
+    <script defer src="js/animationScript.js"></script>
     <link rel="icon" href="img/n2-favicon-black.ico" />
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
@@ -17,53 +18,55 @@
 <body>
     <!-- Loading Animation on Opening-->
     <div id ="opening">
-        <div id = 'opening-logo'><img src='img/n2-icon-white.svg'></img></div>
-        <div id ='opening-circle'></div>
-        <div id ='opening-circle2'></div>
+        <div id = 'n2-logo'><img src='img/n2-icon-white.svg'></img></div>
+        <div id ='n2-circle'></div>
+        <div id ='n2-circle2'></div>
         <div id = 'opening-io'><div id="caret"></div></div>
     </div>
+    
+    
+
     <script defer src="js/opening-Script.js"></script>
     <script defer src="js/promise-chain.js"></script>
 
     <section id='info-bar'>
-        <div id='slide-no'>1/12</div>
-        <div id='slide-title'>Introduce Myself</div>
+        <div id='slide-no'></div>
+        <div id='slide-title'></div>
     </section>
     <div id="main-slide">
         
-        <section class='slide-frame'>
+        <section class='slide-frame' title='ABSTRACT THIS CONTENTS' no='1'>
             <div class='slide'>
                 <div class='panel'>
                     <p>hello again to all my friend!<a class='small' href='https://www.youtube.com/watch?v=eOofWzI3flA'target="_blank" rel="noopener noreferrer">(元ネタ)</a></p>
                     <p>このスライドは、scssを学習する主目的のついでにスライド制作をするという、
                     製作者の都合丸出しの成果物である。</p>
                 </div>
+                <div class='back-panel'>
+
+                </div>
                 <div class='panel'>
                     <p><a href='https://github.com/n2-freevas/introduce_slide_maked_by_3-jinki'target="_blank" rel="noopener noreferrer">github<i class="fab fa-github-square"></i></a>に、このスライドで使われたすべてのマテリアルを格納した。</p>
                     <p>興味があれば、閲覧されたし。</p>
                 </div>
-                <div class='back-panel' style='top:45%;left:-20%;'>
-                    <i class="fab fa-github fa-n2f-opt"></i>
-                </div>
+                
                 <div class='panel'>
-                    <p>また、本コンテンツは開発時間の関係上、以下の環境を推奨する。</p>
+                    <p>また、本コンテンツは以下の環境で動作確認済み</p>
                     <table>
                         <tr><td>ブラウザ</td><td>Chrome,Safari</td></tr>
                         <tr><td>OS</td><td>iOS,MacOS,Windows10</td></tr>
                     </table>
+                    <p>モバイル端末で表示されるコンテンツは一部を縮小・削除しており、コンテンツの体験を最大化したい方はPCでの閲覧を推奨する。</p>
                 </div>
             </div>
         </section>
-        <section class='slide-frame'></section>
-        <section class='slide-frame'></section>
-        <section class='slide-frame'></section>
-        <section class='slide-frame'></section>
-        <section class='slide-frame'></section>
-        <section class='slide-frame'></section>
-        <section class='slide-frame'></section>
-
-
-
+        <section class='slide-frame' title='INTRODUCE MYSELF' no='2'></section>
+        <section class='slide-frame' title='THIRD SLIDE' no='3'></section>
+        <!--
+        <section class='slide-frame' title='FOURTH SLIDE' no='4'></section>
+        <section class='slide-frame' title='FIFTH SLIDE' no='5'></section>
+        <section class='slide-frame' title='SIXTH SLIDE' no='6'></section>
+        -->
     
     </div>
     
