@@ -17,6 +17,7 @@ $breakpoints: (
         --font-size-middle:13px;
         --font-size-small:10px;
         --panel-padding:20px 15px 20px 30px;
+        --back-panel-img-size:100px;
     }
     @include mq(l){
         --main-red:#d80000;
@@ -24,7 +25,15 @@ $breakpoints: (
         --font-size-middle:18px;
         --font-size-small:14px;
         --panel-padding:40px 30px 40px 50px;
+        --back-panel-img-size:200px;
     }
+}
+
+.pc{
+    display: none;
+}
+.mobile{
+    display: none;
 }
 
 
@@ -43,7 +52,7 @@ $breakpoints: (
     #slide-no{
         transform-origin: calc(100% + 105px) 20px;
         transform: rotate(90deg);
-        transition: 1s 0.3s;
+        transition: 0.5s 0.3s;
         &.roll{
             transform: rotate(0deg);
         }
@@ -51,7 +60,7 @@ $breakpoints: (
     #slide-title{
         transform-origin: calc(100% + 105px) 20px;
         transform: rotate(90deg);
-        transition: 1s;
+        transition: 0.5s;
         &.roll{
             transform: rotate(0deg);
         }
@@ -138,17 +147,19 @@ $breakpoints: (
                 font-size: var(--font-size-middle);
                 text-align: center;
             }
+            &.none{
+                display: none;
+            }
 
         }
         .back-panel{
             position: fixed;
-            width: 100px;
-            height:100px;
+            width: var(--back-panel-img-size);
+            height:var(--back-panel-img-size);
             transform: translateZ(-100px) scale(2);
             z-index:5; 
-            background: wheat;
             .fa-n2f-opt{
-                font-size: 200px;
+                font-size: var(--back-panel-img-size);
                 color: white;
             }
         }

@@ -6,6 +6,8 @@ var infobar_slide_title
 var slide_frames
 var vw = window.innerWidth;
 var isDOMLoaded = false;
+var browser = 'unknown'
+var isPhone = false
 
 window.addEventListener('DOMContentLoaded',function(){
     isDOMLoaded = true
@@ -13,8 +15,7 @@ window.addEventListener('DOMContentLoaded',function(){
 
 /* useragent関連 */
 const useragent = window.navigator.userAgent.toLowerCase();
-var browser = 'unknown'
-var isPhone = false
+console.log('useragent',useragent)
 if(useragent.indexOf('msie') != -1 || useragent.indexOf('trident') != -1){console.log('Internet Explorer');browser = 'ie'}else if(useragent.indexOf('edge') != -1){console.log('Edge');browser = 'edge'}
 else if(useragent.indexOf('chrome') != -1){console.log('Google Chrome');browser = 'chrome'}
 else if(useragent.indexOf('safari') != -1){console.log('Safari');browser = 'safari'}else if(useragent.indexOf('firefox') != -1){console.log('FireFox');browser = 'firefox'}
@@ -40,15 +41,23 @@ function Main_Element_Get(){
         infobar = document.getElementById('info-bar');
         infobar_slide_no = document.getElementById('slide-no');
         infobar_slide_title = document.getElementById('slide-title')
-        slide_frames = document.querySelectorAll('.slide-frame')
         resolve('[Main_Element_Get] end')
     });
 }
+
+function Generated_Element_Get(){
+    return new Promise((resolve,reject) => {
+        slide_frames = document.querySelectorAll('.slide-frame')
+        resolve('[Generated_Element_Get] end')
+    });
+}
+
 
 function All_initialization(){
     return new Promise((resolve,reject) => {
         console.log('< Initialization process >')
         getNumofSlide()
+        css_shrink_for_phone()
         resolve('[All_initialization] end')
     });
 }
@@ -91,4 +100,10 @@ function infobar_disroll(){
         infobar_slide_title.classList.remove('roll');
         setTimeout(function(){resolve()},1000);
     });
+}
+function css_shrink_for_phone(){
+    if(isPhone){
+        $('.mobile').css({'display':'block'})
+    }
+    
 }

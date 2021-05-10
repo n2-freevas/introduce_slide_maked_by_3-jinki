@@ -169,7 +169,7 @@ async function opening_is_runnnig(){
         resolver = await ioInputStream(
             [
                 ["Hello again, to all my friend.",100,'output'],
-                ["Together we can play some codi'n'on!",1000,'output'],
+                ["Together we can play some codi'n'on!",100,'output'],
                 /*   
                 [" -",100,'output'],
                 ["codi install n2f -force -p this/br/package",1500,"input"],

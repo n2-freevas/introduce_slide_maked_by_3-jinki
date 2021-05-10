@@ -36,9 +36,7 @@ function InfoBar_ScrollController(){
     slide_frames.forEach(function(element){
         var elem_rect = element.getBoundingClientRect(),
             elem_top = elem_rect.top;
-            console.log(elem_top,element)
         if(elem_top >= -20 && elem_top <= 20){
-            
             no = element.getAttribute('no');
             title = element.getAttribute('title');
             if(no != infobar_slide_no_numerator){
