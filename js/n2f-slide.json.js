@@ -1,6 +1,7 @@
 var n2f_slide_data = [
   { //slide1
     "title": "ABSTRACT THIS CONTENTS",
+    "design": "series",
     "contents": [
       {
         "type": "panel",
@@ -21,8 +22,9 @@ var n2f_slide_data = [
         "type": "back-panel",
         "content": [
           {
-            "tag": "i", "class": "fab fa-github fa-n2f-opt"
-          }
+            "tag": "img",
+            "src": "img/GitHub-Mark-Light-120px-plus.png"
+          },
         ]
       },
       {
@@ -49,7 +51,7 @@ var n2f_slide_data = [
           },
           {
             "tag": "table", 
-            "cell": [["ブラウザ","Chrome,Safari"],["OS","iOS,MacOS,Windows10"]]
+            "item": [["ブラウザ","Chrome,Safari"],["OS","iOS,MacOS,Windows10"]]
           },
           {
             "tag": "p", "class":"mobile", "elements": ["モバイル端末で表示されるコンテンツは一部を縮小・削除しており、コンテンツの体験を最大化したい方はPCでの閲覧を推奨する。"]
@@ -59,11 +61,95 @@ var n2f_slide_data = [
     ]
   },
   { //slide2
-    "title": "INTRODUCE MYSELF"
-    
+    "title": "INTRODUCE MYSELF",
+    "design": "series",
+    "contents": [
+      {
+        "type": "panel",
+        "style": "transparent",
+        "content": [
+          { "tag": "p", 
+            "elements": [
+              {
+                "tag": "ruby",
+                "item": ["野々山","ののやま","太郎","たろう"]
+              }," /男性"," /A型"," /2021春入社"
+          ]
+          }
+        ]
+      },
+      {
+        "type": "back-panel",
+        "content": [
+          {
+            "tag": "img",
+            "src": "img/selfie.jpg"
+          },
+        ]
+      },
+      {
+        "type": "panel",
+        "style": "transparent",
+        "content": [
+          { "tag": "ul", 
+            "item": [
+              "名城大学 情報工学部 色彩系","同大学院 知的センサ情報処理研究室","いくばくかの副業経験",
+              "キャンプ、料理、アート活動、ボードゲーム、麻雀、花札、ウィンドサーフィン(New)、",
+              "CSSの申し子、CSSとJSをこよなく愛する、Webページスクレイピング、Webアニメーション",
+              "機動力、過激、諦めの心(良くも悪くも)、躁病の疑い、みてくれへの拘り"]
+          }
+        ]
+      },
+    ]
   },
   { //slide3
-    "title": "WHAT DONE SO FAR"
-    
+    "title": "WHAT DONE SO FAR",
+    "design": "series",
+    "contents": [
+      /*{
+        "type": "back-panel",
+        "content": [
+          {
+            "tag": "i", "class": "fab fa-github fa-n2f-opt"
+          }
+        ]
+      },*/
+      {
+        "type": "back-panel",
+        "content": [
+          {
+            "tag": "img",
+            "src": "img/selfie.jpg"
+          },
+        ]
+      },
+      {
+        "type": "panel",
+        "style": "transparent",
+        "content": [
+          { "tag": "p", 
+            "elements": [
+              {
+                "tag": "ruby",
+                "item": ["野々山","ののやま","太郎","たろう"]
+              }," /男性"," /A型"," /2021春入社"
+          ]
+          }
+        ]
+      },
+      {
+        "type": "panel",
+        "style": "transparent",
+        "content": [
+          { "tag": "ul", 
+            "item": [
+              "名城大学 情報工学部 色彩系","同大学院 知的センサ情報処理研究室","いくばくかの副業経験",
+              "キャンプ、料理、アート活動、ボードゲーム、麻雀、花札、ウィンドサーフィン(New)、",
+              "CSSの申し子、CSSとJSをこよなく愛する、Webページスクレイピング、Webアニメーション",
+              "機動力、過激、諦めの心(良くも悪くも)、躁病の疑い、みてくれへの拘り"]
+          }
+        ]
+      }
+    ]
   }
 ];

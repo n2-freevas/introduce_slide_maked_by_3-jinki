@@ -6,6 +6,7 @@ async function sequence(){
     await genetareAllSlidesData()
     await Generated_Element_Get()
     await All_initialization()
+    await parallaxConfig()
     await opening_is_end()
 }
 
