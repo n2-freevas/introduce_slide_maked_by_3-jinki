@@ -1,8 +1,8 @@
-const op = document.getElementById("opening")
-const n2_logo = document.getElementById("n2-logo")
-const op_io = document.getElementById("opening-io")
-const n2_cir = document.getElementById("n2-circle")
-const n2_cir2 = document.getElementById("n2-circle2")
+var op = document.getElementById("opening")
+var n2_logo = document.getElementById("n2-logo")
+var op_io = document.getElementById("opening-io")
+var n2_cir = document.getElementById("n2-circle")
+var n2_cir2 = document.getElementById("n2-circle2")
 const path_image = "n2-freevas$  "
 const time_of_a_word_input = 50
 const time_of_a_gauge_process = 10

@@ -9,15 +9,16 @@ function genetareAllSlidesData(){
 }
 
 function generateSlideFrame(){
-    for(var i=0; i<slideData.length; i++){
+    for(var i=0; i<slideData.slides.length; i++){
         /* jsonデータからのスライド情報抜き出し */
-        const tS = slideData[i]
+        const tS = slideData.slides[i]
 
         /* Slide Element (大枠)の制作 */
         var slide_frame_section = document.createElement('section');
         slide_frame_section.setAttribute('class','slide-frame');
         slide_frame_section.setAttribute('title',tS.title);
         slide_frame_section.setAttribute('no',String(i+1));
+        if(tS.style != undefined){slide_frame_section.setAttribute('style',tS.style)}
         var slide_div = document.createElement('div');
         slide_div.setAttribute('class','slide');
         slide_div.classList.add(tS.design);
@@ -27,14 +28,8 @@ function generateSlideFrame(){
         if (tS.contents != undefined){
         const contents = tS.contents;
         for (var j=0; j<contents.length; j++){
-            var type = generateTypePanel(contents[j]);
-            var content = contents[j].content
-            /* panel内の要素を順番に全て構築する。 */
-            for (var k=0; k<content.length; k++){
-                var elem_in_tp = generateElements(content[k])
-                type.insertAdjacentElement('beforeend',elem_in_tp)
-            }
-            slide_div.insertAdjacentElement('beforeend',type)
+            var typepanel = generateTypePanel(contents[j]);
+            slide_div.insertAdjacentElement('beforeend',typepanel)
         }
         }
         /* main_slide　に作ったスライドを挿す */
@@ -45,23 +40,39 @@ function generateSlideFrame(){
 
 /* type panelを生成する関数 */
 function generateTypePanel(data){
-    var type = document.createElement('div');
-    var check = '';
+    var typepanel = document.createElement('div');
+    var mode = '';
     /* type check */
     switch(data.type){
         case "panel": 
         case "back-panel":
         case "image-panel":
-            check = data.type;break;
+            mode = data.type;break;
         default:
-            check = 'none'
+            mode = 'none'
 
     }
-    type.setAttribute('class',check);
-    if(data.style != undefined){
-        type.classList.add(data.style);
+    typepanel.setAttribute('class',mode);
+    if(data.class != undefined){
+        for(var i=0; i < data.class.length; i++){
+            typepanel.classList.add(data.class[i]);
+        }
     }
-    return type
+    var con = data.content
+    /* panel内の要素を順番に全て構築する。 */
+    for (var k=0; k<con.length; k++){
+        var elem_in_tp = generateElements(con[k])
+        switch(mode){
+            case "image-panel":
+                var div = document.createElement('div')
+                div.insertAdjacentElement('beforeend',elem_in_tp)
+                typepanel.insertAdjacentElement('beforeend',div)
+                break; 
+            default: typepanel.insertAdjacentElement('beforeend',elem_in_tp)
+        }
+        
+    }
+    return typepanel
 }
 
 /* type panel内にある全ての要素を返す関数 */
@@ -130,12 +141,28 @@ function generateRubyElement(data,tag){
 
 
 function parallaxConfig(){
-    return new Promise((resolve,reject) => {
-        const back_panel = document.querySelectorAll('.back-panel')
-        console.log(back_panel)
-        back_panel.forEach(bp =>{
-            console.log(bp)
-        })
-        resolve();
-    });
+    
+    const rt = document.querySelector(':root');
+    ch = window.innerHeight
+    rt.style.setProperty('--back-panel-vPosi-up', '25px')
+    rt.style.setProperty('--back-panel-vPosi-middle', '150px')
+    rt.style.setProperty('--back-panel-vPosi-down', '300px')
+    
+   /*
+    const back_panel = document.getElementsByClassName('back-panel')
+    for(var i=0; i<back_panel.length; i++){
+        var top_posi = 0
+        child = back_panel[i].parentElement.children
+        console.log(child)
+        for(var j=0; j < child.length; j++){
+            if (child[j] === back_panel[i]){
+                if(isPhone){back_panel[i].style.top = String(top_posi + 150) + 'px'}
+                else{
+                    _top = String(top_posi)+'px'
+                    back_panel[i].style.top = _top
+                }
+            }
+            else{top_posi += getOccupancyElementHeight_bottom(child[j])}
+        }
+    }*/
 }

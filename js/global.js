@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded',function(){
 
 /* useragent関連 */
 const useragent = window.navigator.userAgent.toLowerCase();
-console.log('useragent',useragent)
+console.log('<useragent> ',useragent)
 if(useragent.indexOf('msie') != -1 || useragent.indexOf('trident') != -1){console.log('Internet Explorer');browser = 'ie'}else if(useragent.indexOf('edge') != -1){console.log('Edge');browser = 'edge'}
 else if(useragent.indexOf('chrome') != -1){console.log('Google Chrome');browser = 'chrome'}
 else if(useragent.indexOf('safari') != -1){console.log('Safari');browser = 'safari'}else if(useragent.indexOf('firefox') != -1){console.log('FireFox');browser = 'firefox'}
@@ -24,7 +24,7 @@ else{console.log('unknown browser');}
 
 
 //skewがうまいこと表示されへんからモバイルの時は切る
-if(useragent.indexOf('iphone') != -1 || useragent.indexOf('android') != -1 || useragent.indexOf('mobile') != -1 || useragent.indexOf('ipod') != -1){isPhone=true}
+if(useragent.indexOf('iphone') != -1 || useragent.indexOf('android') != -1 || useragent.indexOf('mobile') != -1 || useragent.indexOf('ipod') != -1){isPhone=true;console.log('<This device> isPhone')}
 
 const appHeight = () => {
     const doc = document.documentElement
@@ -58,6 +58,7 @@ function All_initialization(){
         console.log('< Initialization process >')
         getNumofSlide()
         css_shrink_for_phone()
+        parallaxConfig()
         resolve('[All_initialization] end')
     });
 }
