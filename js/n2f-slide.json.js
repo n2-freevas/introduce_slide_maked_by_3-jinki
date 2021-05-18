@@ -5,14 +5,6 @@ var n2f_slide_data = {
     "design": "series",
     "contents": [
       {
-        "type": "image-panel",
-        "class": ["wide"],
-          "content": [
-            {"tag": "img","src": "img/Access_logo_red.svg"},
-            {"tag": "h1", "elements": ["配属先希望<br>プレゼンテーション"]}            
-          ]
-      },
-      {
         "type": "panel",
         "content": [
           {
